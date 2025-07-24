@@ -89,7 +89,7 @@ button[type="submit"]:hover {
   background-color: #fafafa;
   border: 1px solid #ccc;
   padding: 15px;
-  gap: 10px ;
+  gap: 10px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
@@ -104,7 +104,6 @@ button[type="submit"]:hover {
 }
 
 .request-card button {
-  /* background-color: #e53935; */
   color: white;
   border: none;
   padding: 8px 12px;
@@ -113,33 +112,39 @@ button[type="submit"]:hover {
   margin-inline-start: 4px;
   font-size: 14px;
 }
-.request-card button:first-of-type {
-  background-color: #43a047;
+
+/* ✅ כפתור אישור */
+.btn-approve {
+  background-color: #388e3c;
 }
-.request-card button:hover {
+.btn-approve:hover {
   background-color: #2e7d32;
 }
 
-.request-card button:nth-of-type(2) {
+/* ❌ כפתור דחיה */
+.btn-reject {
   background-color: #c62828;
 }
-.request-card button:nth-of-type(2):hover {
-  background-color: #fb0509;
+.btn-reject:hover {
+  background-color: #b71c1c;
 }
 
-.request-card button:nth-of-type(3) {
-  background-color: #706a6a;
+/* 🗑️ כפתור מחיקה */
+.btn-delete {
+  background-color: #6d4c41;
 }
-.request-card button:nth-of-type(3):hover {
-  background-color: #898484;
+.btn-delete:hover {
+  background-color: #4e342e;
 }
 
-.request-card button:nth-of-type(4) {
+/* ✏️ כפתור עדכון */
+.btn-edit {
   background-color: #f57c00;
 }
-.request-card button:nth-of-type(4):hover {
+.btn-edit:hover {
   background-color: #ef6c00;
 }
+
 
 /* סטטוס בצבעים */
 .status {
