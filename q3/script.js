@@ -2,7 +2,6 @@
 let requests = [];
 let editingId = null;
 
-// טוען את כל הנתונים עם פתיחת העמוד
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("spellForm");
   const messages = document.getElementById("formMessages");
@@ -55,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleAdvancedField();
     });
 
-    // אם נכנסנו עם עריכת מזהה שמור ב-localStorage
     const editId = localStorage.getItem("editRequestId");
     if (editId) {
       editingId = parseInt(editId);
@@ -217,6 +215,7 @@ function updateItem(id, updatedData) {
     localStorage.setItem("requests", JSON.stringify(requests));
     renderItems();
   }
+  
 }
 
 function setStatus(id, newStatus) {
@@ -241,19 +240,26 @@ function updateStats() {
   }
 
   const approved = requests.filter(r => r.status === "מאושרת").length;
+  const pending = requests.filter(r => r.status === "ממתינה").length; 
   const percent = ((approved / total) * 100).toFixed(1);
 
   statsElement.textContent = `אחוז אישור בקשות : ${percent}% (${approved} מתוך ${total} בקשות אושרו)`;
 
+  const pendingLine = document.createElement("p");
+  pendingLine.textContent = `בקשות שממתינות לתשובה: ${pending}`;
+  statsElement.appendChild(pendingLine);
+  
   const counts = { התקפי: 0, הגנתי: 0, חיזוק: 0 };
   requests.forEach(r => {
     if (counts[r.spell] !== undefined) counts[r.spell]++;
   });
 
+
+
   list.innerHTML = "";
   for (const [type, count] of Object.entries(counts)) {
     const li = document.createElement("li");
-    li.textContent = `סוג לחש ${type}: ${count} בקשות`;
+    li.textContent = `סוג לחש ${type}: ${count}  סה''כ בקשות`;
     list.appendChild(li);
   }
 }
