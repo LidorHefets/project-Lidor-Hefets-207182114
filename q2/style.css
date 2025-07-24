@@ -206,9 +206,9 @@ header {
     padding: 20px 5px;
   }
 
-  .support-box {
-    display: none;
-  }
+
+
+
 
   .bottom-button {
     width: 90vw;
@@ -220,6 +220,18 @@ header {
     text-align: center;
   }
 }
+
+@media only screen and (max-width: 580px) {
+  .support-box {
+    transform: scale(0.5);           
+    transform-origin: top right;     
+    right: 10px;                     
+    bottom: 80px;                    
+    width: auto;                     
+    max-width: none;                
+  }
+}
+
 
 
 @media only screen and (min-width: 581px) and (max-width: 767px) {
@@ -300,3 +312,4 @@ header {
     padding: 16px 32px;
   }
 }
+
