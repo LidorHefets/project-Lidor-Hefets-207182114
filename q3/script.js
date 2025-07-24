@@ -241,6 +241,7 @@ function updateStats() {
 
   const approved = requests.filter(r => r.status === "מאושרת").length;
   const pending = requests.filter(r => r.status === "ממתינה").length; 
+  const rejected = requests.filter(r => r.status === "נדחתה").length;
   const percent = ((approved / total) * 100).toFixed(1);
 
   statsElement.textContent = `אחוז אישור בקשות : ${percent}% (${approved} מתוך ${total} בקשות אושרו)`;
@@ -248,7 +249,11 @@ function updateStats() {
   const pendingLine = document.createElement("p");
   pendingLine.textContent = `בקשות שממתינות לתשובה: ${pending}`;
   statsElement.appendChild(pendingLine);
-  
+
+  const rejectedLine = document.createElement("p");
+  rejectedLine.textContent = `בקשות שנדחו: ${rejected}`;
+  statsElement.appendChild(rejectedLine);
+
   const counts = { התקפי: 0, הגנתי: 0, חיזוק: 0 };
   requests.forEach(r => {
     if (counts[r.spell] !== undefined) counts[r.spell]++;
