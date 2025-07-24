@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>טופס בקשת לחש</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>טופס בקשת לחש חדש</h1>
+
+    <form id="spellForm" novalidate>
+      <label for="fullName">שם מלא *</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">אימייל *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="spellType">סוג הלחש *</label>
+      <select id="spellType" name="spellType" required>
+        <option value="">בחר סוג לחש</option>
+        <option value="התקפי">התקפי</option>
+        <option value="הגנתי">הגנתי</option>
+        <option value="חיזוק">חיזוק</option>
+      </select>
+
+      <label for="knowledge">רמת ידע קיימת (1–10) *</label>
+      <input type="number" id="knowledge" name="knowledge" min="1" max="10" required>
+
+      <label for="hasWand">האם יש שרביט? *</label>
+      <select id="hasWand" name="hasWand" required>
+        <option value="">בחר</option>
+        <option value="כן">כן</option>
+        <option value="לא">לא</option>
+      </select>
+
+      <label for="attempts">מספר ניסיונות קודמים</label>
+      <input type="number" id="attempts" name="attempts" min="0">
+
+      <label for="astroBirth">יום לידה אסטרולוגי *</label>
+      <input type="date" id="astroBirth" name="astroBirth" required>
+
+      <!-- שדה לחש מתקדם נוסף אוטומטית דרך JS -->
+      <div id="formMessages" aria-live="polite"></div>
+
+      <button type="submit">שלח בקשה</button>
+    </form>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

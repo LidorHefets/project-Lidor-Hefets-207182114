@@ -1,0 +1,179 @@
+body {
+  direction: rtl;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #f4f4f8;
+  padding: 20px;
+  margin: 0;
+}
+
+main {
+  max-width: 800px;
+  background-color: #fff;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #4a148c;
+  margin-bottom: 25px;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  margin-top: 25px;
+  width: 100%;
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #4a148c;
+}
+
+#formMessages {
+  margin-top: 20px;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* עיצוב כרטיסי בקשות */
+#requestList {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.request-card {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.request-card h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.request-card p {
+  margin: 5px 0;
+}
+
+.request-card button {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-inline-start: 8px;
+  font-size: 14px;
+}
+.request-card button:first-of-type {
+  background-color: #43a047;
+}
+.request-card button:hover {
+  background-color: #2e7d32;
+}
+
+.request-card button:nth-of-type(2) {
+  background-color: #c62828;
+}
+.request-card button:nth-of-type(2):hover {
+  background-color: #fb0509;
+}
+
+.request-card button:nth-of-type(3) {
+  background-color: #706a6a;
+}
+.request-card button:nth-of-type(3):hover {
+  background-color: #898484;
+}
+
+.request-card button:nth-of-type(4) {
+  background-color: #f57c00;
+}
+.request-card button:nth-of-type(4):hover {
+  background-color: #ef6c00;
+}
+
+/* סטטוס בצבעים */
+.status {
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+
+
+/* סטטיסטיקה */
+#stats {
+  margin-top: 40px;
+  background-color: #f0f7ff;
+  border: 1px solid #90caf9;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+#stats p {
+  font-weight: bold;
+  color: #1565c0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#spellCounts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#spellCounts li {
+  margin-bottom: 6px;
+  color: #0d47a1;
+}
+
+/* רספונסיביות */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+  }
+
+  .request-card {
+    font-size: 15px;
+  }
+}
